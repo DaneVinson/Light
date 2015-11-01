@@ -1,0 +1,16 @@
+<template>
+	<require from="bootstrap/css/bootstrap.css"></require>
+	
+	<section>
+		<h2>${heading}</h2>
+
+		<form>
+			<div class="row">
+				<div class="form-group col-xs-4">
+					<label for="wavelengthValue">Wavelength (nm)</label>
+					<input style="background-color:${colorRgba}" value.bind="wavelength" id="wavelengthValue" type="text" class="form-control" placeholder="visible light from 380 nm violet to 780 nm red">
+				</div>
+			</div>
+		</form>
+	</section>
+</template>
