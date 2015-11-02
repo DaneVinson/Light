@@ -117,10 +117,10 @@ if [ -e "$DEPLOYMENT_TARGET/package.json" ]; then
   exitWithMessageOnError "npm failed"
   echo "Finished resolving npm"
 
-  echo "Installing jspm after npm"
-  eval "node_modules/.bin/jspm" install
-  exitWithMessageOnError "jspm failed"  
-  echo "Finished installing jspm"
+  # echo "Installing jspm after npm"
+  # eval "node_modules/.bin/jspm" install
+  # exitWithMessageOnError "jspm failed"  
+  # echo "Finished installing jspm"
 
   cd - > /dev/null
 fi
