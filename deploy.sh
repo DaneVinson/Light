@@ -128,7 +128,7 @@ if [[ -n "$POST_DEPLOYMENT_ACTION" ]]; then
 fi
 
 echo "Installing jspm"
-eval "node_modules/.bin/jspm" install
+eval npm install jspm
 exitWithMessageOnError "jspm failed"
 echo "Finished installing jspm"
 
