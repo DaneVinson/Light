@@ -115,10 +115,13 @@ if [ -e "$DEPLOYMENT_TARGET/package.json" ]; then
   eval $NPM_CMD install --production
   exitWithMessageOnError "npm failed"
 
-  echo "Installing jspm after npm"
-  echo $GITHUB_USER
-  #eval "node_modules/.bin/jspm" install
-  #exitWithMessageOnError "jspm failed"  
+  echo "Calling jspm registr con github"
+  eval jspm registry config github
+  exitWithMessageOnError "jspm registry config github failed"  
+
+  echo "Installing jspm"
+  eval "node_modules/.bin/jspm" install
+  exitWithMessageOnError "jspm failed"  
   echo "Finished installing jspm"
 
   cd - > /dev/null
