@@ -112,14 +112,14 @@ selectNodeVersion
 # 3. Install npm packages
 if [ -e "$DEPLOYMENT_TARGET/package.json" ]; then
   cd "$DEPLOYMENT_TARGET"
-  echo "Resolving npm"
   eval $NPM_CMD install --production
   exitWithMessageOnError "npm failed"
-  echo "Finished resolving npm"
 
   echo "Installing jspm after npm"
-  eval "node_modules/.bin/jspm" install
-  exitWithMessageOnError "jspm failed"  
+  echo $github_user
+  echo $github_token
+  #eval "node_modules/.bin/jspm" install
+  #exitWithMessageOnError "jspm failed"  
   echo "Finished installing jspm"
 
   cd - > /dev/null
