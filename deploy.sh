@@ -116,8 +116,7 @@ if [ -e "$DEPLOYMENT_TARGET/package.json" ]; then
   exitWithMessageOnError "npm failed"
 
   echo "Installing jspm after npm"
-  echo %github_user%
-  echo %github_token%
+  echo $GITHUB_USER
   #eval "node_modules/.bin/jspm" install
   #exitWithMessageOnError "jspm failed"  
   echo "Finished installing jspm"
