@@ -116,7 +116,7 @@ if [ -e "$DEPLOYMENT_TARGET/package.json" ]; then
   exitWithMessageOnError "npm failed"
 
   echo "Calling jspm registr con github"
-  eval "node_modules/.bin/jspm" registry config github
+  eval "node_modules/.bin/jspm" config registries.github.auth $JSPM_GITHUB_AUTH_TOKEN
   exitWithMessageOnError "jspm registry config github failed"  
 
   echo "Installing jspm"
