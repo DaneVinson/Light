@@ -144,6 +144,11 @@ if [ -e "$DEPLOYMENT_TARGET/package.json" ]; then
   exitWithMessageOnError "gulp-changed install failed"
   echo "Finished installing gulp-changed"
 
+  echo "Installing gulp-plumber"
+  eval $NPM_CMD install gulp-plumber
+  exitWithMessageOnError "gulp-plumber install failed"
+  echo "Finished installing gulp-plumber"
+
   echo "Calling gulp build"
   eval "node_modules/.bin/gulp" build
   exitWithMessageOnError "gulp build failed"  
