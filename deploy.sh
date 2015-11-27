@@ -139,6 +139,11 @@ if [ -e "$DEPLOYMENT_TARGET/package.json" ]; then
   exitWithMessageOnError "run-sequence install failed"
   echo "Finished installing run-sequence"
 
+  echo "Installing gulp-changed"
+  eval $NPM_CMD install gulp-changed
+  exitWithMessageOnError "gulp-changed install failed"
+  echo "Finished installing gulp-changed"
+
   echo "Calling gulp build"
   eval "node_modules/.bin/gulp" build
   exitWithMessageOnError "gulp build failed"  
