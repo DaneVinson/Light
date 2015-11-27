@@ -134,6 +134,11 @@ if [ -e "$DEPLOYMENT_TARGET/package.json" ]; then
   exitWithMessageOnError "require-dir install failed"
   echo "Finished installing require-dir"
 
+  echo "Installing run-sequence"
+  eval $NPM_CMD install run-sequence
+  exitWithMessageOnError "run-sequence install failed"
+  echo "Finished installing run-sequence"
+
   echo "Calling gulp build"
   eval "node_modules/.bin/gulp" build
   exitWithMessageOnError "gulp build failed"  
