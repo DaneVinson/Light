@@ -154,6 +154,11 @@ if [ -e "$DEPLOYMENT_TARGET/package.json" ]; then
   exitWithMessageOnError "gulp-babel install failed"
   echo "Finished installing gulp-babel"
 
+  echo "Installing gulp-sourcemaps"
+  eval $NPM_CMD install gulp-sourcemaps
+  exitWithMessageOnError "gulp-sourcemaps install failed"
+  echo "Finished installing gulp-sourcemaps"
+
   echo "Calling gulp build"
   eval "node_modules/.bin/gulp" build
   exitWithMessageOnError "gulp build failed"  
