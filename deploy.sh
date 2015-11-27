@@ -124,6 +124,11 @@ if [ -e "$DEPLOYMENT_TARGET/package.json" ]; then
   exitWithMessageOnError "jspm failed"  
   echo "Finished installing jspm"
 
+  echo "Calling gulp build"
+  eval "node_modules/.bin/gulp" build
+  exitWithMessageOnError "gulp build failed"  
+  echo "Finished gulp build"
+
   cd - > /dev/null
 fi
 
