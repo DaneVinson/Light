@@ -184,6 +184,11 @@ if [ -e "$DEPLOYMENT_TARGET/package.json" ]; then
   exitWithMessageOnError "aurelia-tools install failed"
   echo "Finished installing aurelia-tools"
 
+  echo "Installing gulp-yuidoc"
+  eval $NPM_CMD install gulp-yuidoc
+  exitWithMessageOnError "gulp-yuidoc install failed"
+  echo "Finished installing gulp-yuidoc"
+
   echo "Calling gulp build"
   eval "node_modules/.bin/gulp" build
   exitWithMessageOnError "gulp build failed"  
