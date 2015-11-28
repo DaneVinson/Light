@@ -204,6 +204,11 @@ if [ -e "$DEPLOYMENT_TARGET/package.json" ]; then
   exitWithMessageOnError "conventional-changelog install failed"
   echo "Finished installing conventional-changelog"
 
+  echo "Installing gulp-bump"
+  eval $NPM_CMD install gulp-bump
+  exitWithMessageOnError "gulp-bump install failed"
+  echo "Finished installing gulp-bump"
+
   echo "Calling gulp build"
   eval "node_modules/.bin/gulp" build
   exitWithMessageOnError "gulp build failed"  
