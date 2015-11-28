@@ -214,6 +214,11 @@ if [ -e "$DEPLOYMENT_TARGET/package.json" ]; then
   exitWithMessageOnError "browser-sync install failed"
   echo "Finished installing browser-sync"
 
+  echo "Installing karma"
+  eval $NPM_CMD install karma
+  exitWithMessageOnError "karma install failed"
+  echo "Finished installing karma"
+
   echo "Calling gulp build"
   eval "node_modules/.bin/gulp" build
   exitWithMessageOnError "gulp build failed"  
