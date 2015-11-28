@@ -179,6 +179,11 @@ if [ -e "$DEPLOYMENT_TARGET/package.json" ]; then
   exitWithMessageOnError "vinyl-paths install failed"
   echo "Finished installing vinyl-paths"
 
+  echo "Installing aurelia-tools"
+  eval $NPM_CMD install aurelia-tools
+  exitWithMessageOnError "aurelia-tools install failed"
+  echo "Finished installing aurelia-tools"
+
   echo "Calling gulp build"
   eval "node_modules/.bin/gulp" build
   exitWithMessageOnError "gulp build failed"  
