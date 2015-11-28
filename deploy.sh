@@ -164,6 +164,11 @@ if [ -e "$DEPLOYMENT_TARGET/package.json" ]; then
   exitWithMessageOnError "gulp-notify install failed"
   echo "Finished installing gulp-notify"
 
+  echo "Installing aurelia-bundler"
+  eval $NPM_CMD install aurelia-bundler
+  exitWithMessageOnError "aurelia-bundler install failed"
+  echo "Finished installing aurelia-bundler"
+
   echo "Calling gulp build"
   eval "node_modules/.bin/gulp" build
   exitWithMessageOnError "gulp build failed"  
