@@ -174,6 +174,11 @@ if [ -e "$DEPLOYMENT_TARGET/package.json" ]; then
   exitWithMessageOnError "del install failed"
   echo "Finished installing del"
 
+  echo "Installing vinyl-paths"
+  eval $NPM_CMD install vinyl-paths
+  exitWithMessageOnError "vinyl-paths install failed"
+  echo "Finished installing vinyl-paths"
+
   echo "Calling gulp build"
   eval "node_modules/.bin/gulp" build
   exitWithMessageOnError "gulp build failed"  
