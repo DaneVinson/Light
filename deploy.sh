@@ -194,6 +194,11 @@ if [ -e "$DEPLOYMENT_TARGET/package.json" ]; then
   exitWithMessageOnError "gulp-protractor install failed"
   echo "Finished installing gulp-protractor"
 
+  echo "Installing gulp-eslint"
+  eval $NPM_CMD install gulp-eslint
+  exitWithMessageOnError "gulp-eslint install failed"
+  echo "Finished installing gulp-eslint"
+
   echo "Calling gulp build"
   eval "node_modules/.bin/gulp" build
   exitWithMessageOnError "gulp build failed"  
