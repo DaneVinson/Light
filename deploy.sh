@@ -189,6 +189,11 @@ if [ -e "$DEPLOYMENT_TARGET/package.json" ]; then
   exitWithMessageOnError "gulp-yuidoc install failed"
   echo "Finished installing gulp-yuidoc"
 
+  echo "Installing gulp-protractor"
+  eval $NPM_CMD install gulp-protractor
+  exitWithMessageOnError "gulp-protractor install failed"
+  echo "Finished installing gulp-protractor"
+
   echo "Calling gulp build"
   eval "node_modules/.bin/gulp" build
   exitWithMessageOnError "gulp build failed"  
