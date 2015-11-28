@@ -169,6 +169,11 @@ if [ -e "$DEPLOYMENT_TARGET/package.json" ]; then
   exitWithMessageOnError "aurelia-bundler install failed"
   echo "Finished installing aurelia-bundler"
 
+  echo "Installing del"
+  eval $NPM_CMD install del
+  exitWithMessageOnError "del install failed"
+  echo "Finished installing del"
+
   echo "Calling gulp build"
   eval "node_modules/.bin/gulp" build
   exitWithMessageOnError "gulp build failed"  
