@@ -209,6 +209,11 @@ if [ -e "$DEPLOYMENT_TARGET/package.json" ]; then
   exitWithMessageOnError "gulp-bump install failed"
   echo "Finished installing gulp-bump"
 
+  echo "Installing browser-sync"
+  eval $NPM_CMD install browser-sync
+  exitWithMessageOnError "browser-sync install failed"
+  echo "Finished installing browser-sync"
+
   echo "Calling gulp build"
   eval "node_modules/.bin/gulp" build
   exitWithMessageOnError "gulp build failed"  
