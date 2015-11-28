@@ -199,6 +199,11 @@ if [ -e "$DEPLOYMENT_TARGET/package.json" ]; then
   exitWithMessageOnError "gulp-eslint install failed"
   echo "Finished installing gulp-eslint"
 
+  echo "Installing conventional-changelog"
+  eval $NPM_CMD install conventional-changelog
+  exitWithMessageOnError "conventional-changelog install failed"
+  echo "Finished installing conventional-changelog"
+
   echo "Calling gulp build"
   eval "node_modules/.bin/gulp" build
   exitWithMessageOnError "gulp build failed"  
